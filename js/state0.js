@@ -9,6 +9,8 @@ monster.state0.prototype = {
 
 function preload(){};
 
-function create(){};
+function create(){
+	game.scale.scaleMode = Phaser.ScaleManager.Show_All;
+};
 
 function update(){};
