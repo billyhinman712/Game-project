@@ -6,7 +6,9 @@ monster.state3.prototype = {
 	update: update
 };
 
-function preload(){};
+function preload(){
+	game.load.image("tileMap", "../img/newmap.tmx")
+};
 
 function create(){};
 

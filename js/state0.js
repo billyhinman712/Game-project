@@ -7,9 +7,12 @@ monster.state0.prototype = {
 	update: update
 };
 
-function preload(){};
+function preload(){
+	game.load.image("background", "../img/cave.jpg");
+};
 
 function create(){
+	var background = game.add.tileSprite(0, 0, game.width, game.height, "background");
 	game.scale.scaleMode = Phaser.ScaleManager.Show_All;
 };
 
