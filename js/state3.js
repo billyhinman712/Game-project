@@ -10,7 +10,7 @@ function preload(){
 	//imitalizing images
 	game.load.tilemap("field", "../img/monster.json", null, Phaser.Tilemap.TILED_JASON);
 	game.load.image("tiles", "../img/monsters-within.png")
-	game.load.image("player", "../img/hero.png");
+	game.load.spritesheet("player", "../img/hero.png", 32, 32);
 	game.load.image("enemy", "../img/dragon.png");
 	game.load.image("book", "../img/book.png");
 
@@ -24,7 +24,9 @@ function create(){
 	tilemap.addTilesetImage("tiles");
 
 	//create player
-	player = game.add.spriteSheet(0, 160, "player");
+	player = game.add.sprite(0, 160, "player");
+	player.animations.add("walk", [0, 1, 2, 3]);
+	player.animations.play("walk", 12, true);
 	game.physics.arcade.enable(player);
 	player.body.collideWorldBounds = true;
 	player.score = 0;
@@ -52,17 +54,19 @@ function update(){
 	player.body.velocity.set(0);
 
 	if(cursors.left.isDown){
-		player.body.velocity.x = -30;
+		player.body.velocity.x = -70;
+		player.scale.setTo(-1,1);
 	}
 	else if(cursors.right.isDown){
-		player.body.velocity.x =30;
+		player.body.velocity.x =70;
+		player.scale.setTo(1,1);
 	}
 
 	if(cursors.up.isDown){
-		player.body.velocity.y = -30;
+		player.body.velocity.y = -70;
 	}
 	else if(cursors.down.isDown){
-		player.body.velocity.y = 30;
+		player.body.velocity.y = 70;
 	}
 
 	//define collisions
