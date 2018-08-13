@@ -13,15 +13,34 @@ function preload(){
 };
 
 function create(){
-	game.add.tileSprite(600, 100, "ending");
+	game.add.sprite(560, 100, "ending");
 
-	text = "Congradulations you created a utopia of man and monsters.";
+	text = "Congradulations you created peace between man and monsters.";
 
-	this.spellOutText(600, 200, 400, text, 50, 50, "#000");
+	spellOutText(300, 320, 400, text, 30, 50, "#fff");
 
-	var mainMenu = game.add.button(760, 350, "menu", function(){
-		changestate(0);
+	var mainMenu = game.add.button(560, 416, "menu", function(){
+		changeState(0);
 	});
 };
 
 function update(){};
+
+function spellOutText(x, y, width, text, fontSize, speed, fill){
+	var sentence = game.add.text(x, y, "", {fontSize: fontSize + "px", fill: fill});
+	var currentLine = game.add.text(10, 10, "", {fontSize: fontSize + "px", fill: fill});
+	currentLine.alpha = 0;
+	var loop = game.time.events.loop(speed, addCharacter);
+
+	var index = 0;
+
+	function addCharacter(){
+		sentence.text += text[index];
+		currentLine.text += text[index];
+
+		if(index >= text.length - 1){
+			game.time.events.remove(loop);
+		}
+		index ++;
+	}
+};
