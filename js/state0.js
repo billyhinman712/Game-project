@@ -26,10 +26,6 @@ function create(){
 	});
 };
 
-function update(){
-
-};
-
 function changeState(num){
 	game.state.start("state" + num)
 }

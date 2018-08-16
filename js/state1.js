@@ -29,8 +29,6 @@ function create(){
 
 };
 
-function update(){};
-
 function spellOutText(x, y, width, text, fontSize, speed, fill){
 	var sentence = game.add.text(x, y, "", {fontSize: fontSize + "px", fill: fill});
 	var currentLine = game.add.text(10, 10, "", {fontSize: fontSize + "px", fill: fill});

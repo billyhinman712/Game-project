@@ -100,7 +100,7 @@ function update(){
 	game.physics.arcade.overlap(player, monsters, kill);
 	game.physics.arcade.overlap(player, book, killbook);
 
-	if(book.alive === false && player.x === 32 && player.y === 160){
+	if(book.alive === false && Math.round(player.x) === 32 && Math.round(player.y) === 160){
 		if(player.score === 1000){
 			game.state.start("state5");
 		}
