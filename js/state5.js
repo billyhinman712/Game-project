@@ -1,6 +1,6 @@
 //0 score ending
-monster.state4 = function(){};
-monster.state4.prototype = {
+monster.state5 = function(){};
+monster.state5.prototype = {
 	preload: preload,
 	create: create,
 	update: update
