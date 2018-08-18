@@ -8,10 +8,10 @@ monster.state0.prototype = {
 };
 
 function preload(){
-	game.load.image("background", "../img/cave.jpg");
-	game.load.image("banner", "../img/start_banner.png");
-	game.load.image("start", "../img/startbutton.png");
-	game.load.image("instructions", "../img/instructionbutton.png")
+	game.load.image("background", "./img/cave.jpg");
+	game.load.image("banner", "./img/start_banner.png");
+	game.load.image("start", "./img/startbutton.png");
+	game.load.image("instructions", "./img/instructionbutton.png")
 };
 
 function create(){

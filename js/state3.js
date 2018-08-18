@@ -9,12 +9,12 @@ monster.state3.prototype = {
 
 function preload(){
 	//imitalizing images
-	game.load.tilemap("field", "../img/monster.json", null, Phaser.Tilemap.TILED_JASON);
-	game.load.image("tiles", "../img/monsters-within.png");
-	game.load.spritesheet("player", "../img/hero.png", 32, 32);
-	game.load.image("enemy", "../img/dragon.png");
-	game.load.image("book", "../img/book.png");
-	game.load.image("menu", "../img/menubutton.png");
+	game.load.tilemap("field", "./img/monster.json", null, Phaser.Tilemap.TILED_JSON);
+	game.load.image("tiles", "./img/monsters-within.png");
+	game.load.spritesheet("player", "./img/hero.png", 32, 32);
+	game.load.image("enemy", "./img/dragon.png");
+	game.load.image("book", "./img/book.png");
+	game.load.image("menu", "./img/menubutton.png");
 
 	//initalize arcade physics
 	game.physics.startSystem(Phaser.Physics.ARCADE);

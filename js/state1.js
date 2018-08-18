@@ -9,8 +9,8 @@ monster.state1.prototype = {
 };
 
 function preload(){
-	game.load.image("menu", "../img/menubutton.png");
-	game.load.image("start", "../img/startbutton.png");
+	game.load.image("menu", "./img/menubutton.png");
+	game.load.image("start", "./img/startbutton.png");
 };
 
 function create(){
