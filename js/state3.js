@@ -10,7 +10,7 @@ monster.state3.prototype = {
 function preload(){
 	//imitalizing images
 	game.load.tilemap("field", "./img/monster.json", null, Phaser.Tilemap.TILED_JSON);
-	game.load.image("tiles", "./img/monsters-within.png");
+	game.load.image("monsters-within", "./img/monsters-within.png");
 	game.load.spritesheet("player", "./img/hero.png", 32, 32);
 	game.load.image("enemy", "./img/dragon.png");
 	game.load.image("book", "./img/book.png");
@@ -23,8 +23,9 @@ function preload(){
 function create(){
 	//create map
 	var tilemap = game.add.tilemap("field");
-	tilemap.addTilesetImage("tiles");
+	tilemap.addTilesetImage("monsters-within", "monsters-within");
 	var layer = tilemap.createLayer("layer");
+	layer.resizeWorld();
 
 	tilemap.setCollisionBetween(1, 4, true, "layer");
 	tilemap.setCollisionBetween(6, 7, true, "layer");
