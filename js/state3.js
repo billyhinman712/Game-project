@@ -8,8 +8,8 @@ monster.state3.prototype = {
 };
 
 function preload(){
-	//imitalizing images
-	game.load.tilemap("field", "./img/monster.json", null, Phaser.Tilemap.TILED_JSON);
+	//initalizing images
+	game.load.tilemap("field", "./img/field.json", null, Phaser.Tilemap.TILED_JSON);
 	game.load.image("monsters-within", "./img/monsters-within.png");
 	game.load.spritesheet("player", "./img/hero.png", 32, 32);
 	game.load.image("enemy", "./img/dragon.png");
@@ -24,14 +24,14 @@ function create(){
 	//create map
 	var tilemap = game.add.tilemap("field");
 	tilemap.addTilesetImage("monsters-within", "monsters-within");
-	var layer = tilemap.createLayer("layer");
+	var layer = tilemap.createLayer("Tile Layer 1");
 	layer.resizeWorld();
 
-	tilemap.setCollisionBetween(1, 4, true, "layer");
-	tilemap.setCollisionBetween(6, 7, true, "layer");
-	tilemap.setCollisionBetween(9, 9, true, "layer");
-	tilemap.setCollisionBetween(13, 16, true, "layer");
-	tilemap.setCollisionBetween(18, 36, true, "layer");
+	// tilemap.setCollisionBetween(1, 4, true, "layer");
+	// tilemap.setCollisionBetween(6, 7, true, "layer");
+	// tilemap.setCollisionBetween(9, 9, true, "layer");
+	// tilemap.setCollisionBetween(13, 16, true, "layer");
+	// tilemap.setCollisionBetween(18, 36, true, "layer");
 
 	//create player
 	player = game.add.sprite(0, 160, "player");
